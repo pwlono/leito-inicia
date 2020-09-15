@@ -2,13 +2,48 @@
   text-align: center;
 }
 
+.title {
+  color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1px;
+  width: 100%;
+}
+
+.vevo {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+  border: 1px solid white;
+  background-color: rgb(44, 44, 44);
+}
+
+a {
+  padding: 8px;
+  display: block;
+}
+
+.inputs {
+  margin-top: 100px;
+}
+
 .App-content {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
