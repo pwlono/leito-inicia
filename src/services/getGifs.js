@@ -1,7 +1,7 @@
 const apiKey = "2SPPds59fL1ZEpLqgJ8wT1w0pNwhQL7S";
 
-export default function getGifs({ keyword = "messi" } = {}) {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`;
+export default function getGifs({ keyword, quantity } = {}) {
+  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=${quantity}&offset=0&rating=g&lang=en`;
 
   return fetch(apiURL)
     .then(res => res.json())
