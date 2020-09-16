@@ -6,7 +6,7 @@ export default function useGifs({ keyword, quantity }) {
 
   useEffect(() => {
     getGifs({ keyword, quantity }).then(gifs => setGifs(gifs));
-  }, [keyword]);
+  }, [keyword, quantity]);
 
   return { gifs };
 }

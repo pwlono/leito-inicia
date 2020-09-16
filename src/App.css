@@ -3,7 +3,7 @@
 }
 
 .title {
-  color: lightgrey;
+  color: green;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -13,8 +13,12 @@
 .navbar {
   position: -webkit-sticky;
   position: sticky;
-  top: 1px;
+  display: flex;
+  flex-direction: column;
+  top: 0;
   width: 100%;
+  background-color: rgb(44, 44, 44);
+  align-items: center;
 }
 
 .vevo {
@@ -26,7 +30,6 @@
 li {
   float: left;
   border: 1px solid white;
-  background-color: rgb(44, 44, 44);
 }
 
 a {

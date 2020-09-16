@@ -9,12 +9,13 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <div className='App'>
-      <section className='App-content'>
-        <h1 className='title'>Buscateungif.com </h1>
-        <NavBar />
+      <h1 className='title'>Buscateungif.com</h1>
+      <NavBar />
+
+      <body className='App-content'>
         <Route component={Home} path='/' />
         <Route component={SearchResults} path='/search/:keyword/:quantity' />
-      </section>
+      </body>
     </div>
   );
 }
