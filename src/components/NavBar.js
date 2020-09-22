@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../App.css";
 import { Link } from "wouter";
+import StaticSearch from "../context/StaticSearch";
 
 export default function NavBar() {
+  const context = useContext(StaticSearch);
+  console.log(context);
   return (
     <nav className='navbar'>
       <ul className='vevo'>
@@ -12,13 +15,13 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href=''>
-            <a>leo</a>
+          <Link href={`/search/${context.keyword}/${context.quantity}`}>
+            <a>Search</a>
           </Link>
         </li>
         <li>
           <Link href=''>
-            <a>jorge</a>
+            <a>Detail</a>
           </Link>
         </li>
       </ul>

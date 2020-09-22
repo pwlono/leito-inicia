@@ -19,6 +19,7 @@
   width: 100%;
   background-color: rgb(44, 44, 44);
   align-items: center;
+  z-index: 2;
 }
 
 .vevo {
@@ -38,7 +39,8 @@ a {
 }
 
 .inputs {
-  margin-top: 100px;
+  margin-top: 1%;
+  z-index: 0;
 }
 
 .App-content {

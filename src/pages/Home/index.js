@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useLocation } from "wouter";
 import "../../App.css";
+import StaticSearch from "../../context/StaticSearch";
 
 export default function Home() {
-  const [keyword, setKeyword] = useState("");
+  const context = useContext(StaticSearch);
+  const { keyword, quantity, setKeyword, setQuantity } = context;
   const [path, setPath] = useLocation();
-  const [quantity, setQuantity] = useState(0);
 
   const handleSubmit = evt => {
     evt.preventDefault();
     setPath(`/search/${keyword}/${quantity}`);
   };
+
   const handleChange = evt => {
-    setKeyword(evt.target.value);
+    setTimeout(setKeyword(evt.target.value), 3000);
   };
 
   const handleQuantity = evt => {
@@ -24,10 +26,10 @@ export default function Home() {
       <form onSubmit={handleSubmit}>
         <div className='inputs'>
           <input
+            autoFocus
             placeholder='Search gifs here..'
             onChange={handleChange}
             type='text'
-            value={keyword}
           />
           <input
             type='number'
@@ -36,6 +38,7 @@ export default function Home() {
             value={quantity}
           />
           <button type='submit'>Mandale Mecha</button>
+          <p> ultima busqueda</p>
         </div>
       </form>
     </div>

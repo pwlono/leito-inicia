@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Route } from "wouter";
 import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResult";
 import Detail from "./pages/Detail";
 import NavBar from "./components/NavBar";
+import StaticSearch from "./context/StaticSearch";
 
 function App() {
-  return (
-    <div className='App'>
-      <h1 className='title'>Buscateungif.com</h1>
-      <NavBar />
+  const [keyword, setKeyword] = useState();
+  const [quantity, setQuantity] = useState(1);
 
-      <body className='App-content'>
-        <Route component={Home} path='/' />
-        <Route component={SearchResults} path='/search/:keyword/:quantity' />
-      </body>
-    </div>
+  const contextValue = {
+    keyword: keyword,
+    quantity: quantity,
+    setKeyword: setKeyword,
+    setQuantity: setQuantity,
+  };
+
+  return (
+    <StaticSearch.Provider value={contextValue}>
+      <div className='App'>
+        <h1 className='title'>Buscateungif.com</h1>
+        <NavBar />
+        <body className='App-content'>
+          <Route component={Home} path='/' />
+          <Route component={SearchResults} path='/search/:keyword/:quantity' />
+          <Route component={Detail} path='/gif/:id' />
+        </body>
+      </div>
+    </StaticSearch.Provider>
   );
 }
 
