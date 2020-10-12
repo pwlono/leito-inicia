@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useLocation } from "wouter";
 import "../../App.css";
 import StaticSearch from "../../context/StaticSearch";
