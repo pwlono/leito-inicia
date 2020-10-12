@@ -10,12 +10,14 @@ import StaticSearch from "./context/StaticSearch";
 function App() {
   const [keyword, setKeyword] = useState();
   const [quantity, setQuantity] = useState(1);
+  const urls = [];
 
   const contextValue = {
     keyword: keyword,
     quantity: quantity,
     setKeyword: setKeyword,
     setQuantity: setQuantity,
+    urls: urls,
   };
 
   return (
@@ -26,7 +28,7 @@ function App() {
         <body className='App-content'>
           <Route component={Home} path='/' />
           <Route component={SearchResults} path='/search/:keyword/:quantity' />
-          <Route component={Detail} path='/gif/:id' />
+          <Route component={Detail} path='/detail/:id' />
         </body>
       </div>
     </StaticSearch.Provider>

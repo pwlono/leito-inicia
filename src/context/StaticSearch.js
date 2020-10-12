@@ -5,6 +5,7 @@ const Context = React.createContext({
   quantity: null,
   setKeyword: null,
   setQuantity: null,
+  urls: [],
 });
 
 export default Context;

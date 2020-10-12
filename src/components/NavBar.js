@@ -5,7 +5,7 @@ import StaticSearch from "../context/StaticSearch";
 
 export default function NavBar() {
   const context = useContext(StaticSearch);
-  console.log(context);
+
   return (
     <nav className='navbar'>
       <ul className='vevo'>
@@ -20,7 +20,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href=''>
+          <Link href='/detail/:id'>
             <a>Detail</a>
           </Link>
         </li>
